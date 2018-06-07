@@ -2,19 +2,19 @@ package edu.mum.controller;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import edu.mum.model.Product;
 import edu.mum.model.repo.ProductStore;
 
-@Controller
+@RestController
 public class ProductController {
 	
 	
 	@RequestMapping("/products")
-	@ResponseBody
+	//@ResponseBody
 	public List<Product> getProducts(){
 		System.out.println("Printing list of products...");
 		return ProductStore.loadProducts();
